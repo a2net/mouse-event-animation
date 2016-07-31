@@ -14,3 +14,5 @@ to initiate the script just add the next script to your DOM
 	animateMouse('mousemove', args);
 </script>
 ```
+
+setToElement option is for applying the animation on spesific areas of the page
