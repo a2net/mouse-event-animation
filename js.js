@@ -11,15 +11,16 @@ var animateMouse = function(event, args){
 	self.Args;
 
   	function setVals(args, defaultArgs){
-  		console.log(args, defaultArgs);
 		if ( typeof args === 'undefined') {
 			self.Args = defaultArgs;
 			return;
 		}
 
-		for(val in defaultArgs){
-			if ( typeof args[val] !== 'undefined' ){
+		for(val in args){
+			if ( typeof defaultArgs[val] !== 'undefined' ){
 				defaultArgs[val] = args[val];
+			} else {
+				console.log("Trying to set an unfamiliar value of: " + val);
 			}
 		}
 
