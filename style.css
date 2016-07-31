@@ -1,0 +1,152 @@
+@-webkit-keyframes click {
+  0%{
+  	width: 10px;
+	height: 10px;
+	opacity: 1;
+  }
+  25%{
+  	width: 15px;
+	height: 15px;
+	margin-top: -2px;
+	margin-left: -2px;
+	opacity: 0.6;
+  }
+  50%{
+  	width: 20px;
+	height: 20px;
+	margin-top: -5px;
+	margin-left: -5px;
+	opacity: 0.4;
+  }
+  75%{
+  	width: 25px;
+	height: 25px;
+	margin-top: -7px;
+	margin-left: -7px;
+	opacity: 0.2;
+  }
+  100%{
+  	width: 30px;
+	height: 30px;
+	margin-top: -10px;
+	margin-left: -10px;
+	opacity: 0;
+  }
+}
+@-moz-keyframes click {
+  0%{
+  	width: 10px;
+	height: 10px;
+	opacity: 1;
+  }
+  25%{
+  	width: 15px;
+	height: 15px;
+	margin-top: -2px;
+	margin-left: -2px;
+	opacity: 0.6;
+  }
+  50%{
+  	width: 20px;
+	height: 20px;
+	margin-top: -5px;
+	margin-left: -5px;
+	opacity: 0.4;
+  }
+  75%{
+  	width: 25px;
+	height: 25px;
+	margin-top: -7px;
+	margin-left: -7px;
+	opacity: 0.2;
+  }
+  100%{
+  	width: 30px;
+	height: 30px;
+	margin-top: -10px;
+	margin-left: -10px;
+	opacity: 0;
+  }
+}
+@-o-keyframes click {
+  0%{
+  	width: 10px;
+	height: 10px;
+	opacity: 1;
+  }
+  25%{
+  	width: 15px;
+	height: 15px;
+	margin-top: -2px;
+	margin-left: -2px;
+	opacity: 0.6;
+  }
+  50%{
+  	width: 20px;
+	height: 20px;
+	margin-top: -5px;
+	margin-left: -5px;
+	opacity: 0.4;
+  }
+  75%{
+  	width: 25px;
+	height: 25px;
+	margin-top: -7px;
+	margin-left: -7px;
+	opacity: 0.2;
+  }
+  100%{
+  	width: 30px;
+	height: 30px;
+	margin-top: -10px;
+	margin-left: -10px;
+	opacity: 0;
+  }
+}
+@keyframes click {
+  0%{
+  	width: 10px;
+	height: 10px;
+	opacity: 1;
+  }
+  25%{
+  	width: 15px;
+	height: 15px;
+	margin-top: -2px;
+	margin-left: -2px;
+	opacity: 0.6;
+  }
+  50%{
+  	width: 20px;
+	height: 20px;
+	margin-top: -5px;
+	margin-left: -5px;
+	opacity: 0.4;
+  }
+  75%{
+  	width: 25px;
+	height: 25px;
+	margin-top: -7px;
+	margin-left: -7px;
+	opacity: 0.2;
+  }
+  100%{
+  	width: 30px;
+	height: 30px;
+	margin-top: -10px;
+	margin-left: -10px;
+	opacity: 0;
+  }
+}
+
+
+
+.animateClick{
+	border-radius: 100%;
+	width: 10px;
+	height: 10px;
+	opacity: 0;
+	border: 1px solid #45c5d8;
+	position: fixed;
+	animation: click ease-in-out forwards 0.3s;
+}
