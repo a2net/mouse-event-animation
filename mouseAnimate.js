@@ -2,13 +2,16 @@ var animateMouse = function(event, args){
 
 	var self = this,
 		defaultArgs = {
-			time : "0.3s"
+			time : "0.3s",
+			setToElement: document,
+			color: '#000'
 		},
   		pfx = ["webkit", "moz", "MS", "o", ""]; // Browser types support
 
 	self.previousY = 0;
 	self.previousX = 0;
 	self.Args;
+	self.event = event;
 
   	function setVals(args, defaultArgs){
 		if ( typeof args === 'undefined') {
@@ -26,24 +29,20 @@ var animateMouse = function(event, args){
 
 		self.Args = defaultArgs;
 	};
-
-	//Self firing function on dom ready
-	window.onload = (function(){
-		setVals(args, defaultArgs);
-  		PrefixedEvent(document, event, createElement);
-	})();
   
-  function PrefixedEvent(element, type, callback) {
-  	//Run on the browser prefix (array) to detect users browser and set the event listener
-    for (var p = 0; p < pfx.length; p++) {
-      if (!pfx[p]) type = type.toLowerCase();
-      element.addEventListener(pfx[p]+type, callback, false); // Event listener to the document "On click"
-    }
-  }
+	function PrefixedEvent(element, type, callback) {
+		//Run on the browser prefix (array) to detect users browser and set the event listener
+		for (var p = 0; p < pfx.length; p++) {
+			if (!pfx[p]) {
+				type = type.toLowerCase();
+			}
+			element.addEventListener(pfx[p]+type, callback, false); // Event listener for the document for mouse events
+		}
+	}
 
 	function removeElemAfterAnimation(elem){
 		//Add a listener to the elemnt to wait for the animation end time
-		elem.addEventListener('animationend', function(e){
+		PrefixedEvent(elem, 'animationend', function(e){
 			document.body.removeChild(elem); // Remove the element from the dom
 		})
 	}
@@ -74,8 +73,10 @@ var animateMouse = function(event, args){
 		elem.style.top = positionTop + 'px';
 		// Set left position of the element by the click event offset
 		elem.style.left = positionLeft + 'px';
-    
+		// Set animation duration time
     	elem.style.animationDuration = self.Args.time;
+    	// Set circle color
+    	elem.style.borderColor = self.Args.color;
 		// Add a class to the element
 		elem.classList.add('animateClick');
 		// Append the new element to the body
@@ -83,5 +84,9 @@ var animateMouse = function(event, args){
 		//Pass the element for removing after animation ends
 		removeElemAfterAnimation(elem);
 	}
+
+	//Excecute
+	setVals(args, defaultArgs);
+	PrefixedEvent(self.Args.setToElement , self.event, createElement);
 
 }

@@ -3,14 +3,21 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script type="text/javascript" src="js.js"></script>
-	<script type="text/javascript">
-		var args = {
-			time : "0.5s"
-		},
-		p = new animateMouse('mousemove', args);
-	</script>
+	<script type="text/javascript" src="mouseAnimate.js"></script>
 </head>
 <body>
+
+<div id="foo" style="width: 500px;height:200px;background: #aaa"></div>
+
+<script type="text/javascript">
+	var args = {
+		time : "0.5s", // Default "0.3s"
+		setToElement: document.getElementById('foo'), // Default document
+		color: '#65dd00' // Default #000
+	};
+
+	animateMouse('mousemove', args);
+</script>
+
 </body>
 </html>
