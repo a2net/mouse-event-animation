@@ -10,4 +10,4 @@ args{
 	"time" : (string) "0.5s"
 }
 
-var varName = new animateMouse( 'mouseEvent', { "time": 0.5} );
+var varName = new animateMouse( 'mouseEvent', { "time": "0.5s" } );
