@@ -1,13 +1,23 @@
-var animateMouse = function(event){
+var animateMouse = function(event, args){
 
-	var self = this;
+	var self = this,
+  		pfx = ["webkit", "moz", "MS", "o", ""]; // Browser types support
 	self.previousY = 0;
 	self.previousX = 0;
+  self.time = ( args.time || '0.3' ) + 's';
 
 	//Self firing function on dom ready
 	window.onload = (function(){
-		document.addEventListener(event, createElement); // Event listener to the document "On click"
+  	PrefixedEvent(document, event, createElement);
 	})();
+  
+  function PrefixedEvent(element, type, callback) {
+  	//Run on the browser prefix (array) to detect users browser and set the event listener
+    for (var p = 0; p < pfx.length; p++) {
+      if (!pfx[p]) type = type.toLowerCase();
+      element.addEventListener(pfx[p]+type, callback, false); // Event listener to the document "On click"
+    }
+  }
 
 	function removeElemAfterAnimation(elem){
 		//Add a listener to the elemnt to wait for the animation end time
@@ -42,6 +52,8 @@ var animateMouse = function(event){
 		elem.style.top = positionTop + 'px';
 		// Set left position of the element by the click event offset
 		elem.style.left = positionLeft + 'px';
+    
+    elem.style.animationDuration = self.time;
 		// Add a class to the element
 		elem.classList.add('animateClick');
 		// Append the new element to the body
