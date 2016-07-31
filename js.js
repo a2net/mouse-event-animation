@@ -1,17 +1,34 @@
 var animateMouse = function(event, args){
 
 	var self = this,
-  		pfx = ["webkit", "moz", "MS", "o", ""], // Browser types support
-  		Args = typeof args === 'undefined' ? { "time" : '0.3s' } : args ; 
-
-  		console.log();
+		defaultArgs = {
+			time : "0.3s"
+		},
+  		pfx = ["webkit", "moz", "MS", "o", ""]; // Browser types support
 
 	self.previousY = 0;
 	self.previousX = 0;
-  	self.time = Args.time;
+	self.Args;
+
+  	function setVals(args, defaultArgs){
+  		console.log(args, defaultArgs);
+		if ( typeof args === 'undefined') {
+			self.Args = defaultArgs;
+			return;
+		}
+
+		for(val in defaultArgs){
+			if ( typeof args[val] !== 'undefined' ){
+				defaultArgs[val] = args[val];
+			}
+		}
+
+		self.Args = defaultArgs;
+	};
 
 	//Self firing function on dom ready
 	window.onload = (function(){
+		setVals(args, defaultArgs);
   		PrefixedEvent(document, event, createElement);
 	})();
   
@@ -57,7 +74,7 @@ var animateMouse = function(event, args){
 		// Set left position of the element by the click event offset
 		elem.style.left = positionLeft + 'px';
     
-    	elem.style.animationDuration = self.time;
+    	elem.style.animationDuration = self.Args.time;
 		// Add a class to the element
 		elem.classList.add('animateClick');
 		// Append the new element to the body
