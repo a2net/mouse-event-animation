@@ -4,4 +4,7 @@
 to initiate the script just
 add 
 
-var varName = new animateMouse( 'mouseEvent' );
+Args to pass
+	Time: (int)
+
+var varName = new animateMouse( 'mouseEvent', { "time": 0.5} );
