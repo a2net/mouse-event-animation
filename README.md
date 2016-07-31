@@ -3,6 +3,7 @@
 
 to initiate the script just add the next script to your DOM
 
+```
 <script>
 
 	//Args to pass
@@ -13,3 +14,4 @@ to initiate the script just add the next script to your DOM
 	varName = new animateMouse( 'mouseEvent', args );
 	
 </script>
+```
