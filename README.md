@@ -1,13 +1,15 @@
 # mouse-event-animation
 
 
-to initiate the script just
-add 
+to initiate the script just add the next script to your DOM
 
-Args to pass
+<script>
 
-args{
-	"time" : (string) "0.5s"
-}
-
-var varName = new animateMouse( 'mouseEvent', { "time": "0.5s" } );
+	//Args to pass
+	var args = {
+		time : "0.5s"
+	},
+	//Call animation
+	varName = new animateMouse( 'mouseEvent', args );
+	
+</script>
