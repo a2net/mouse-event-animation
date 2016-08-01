@@ -149,4 +149,5 @@
 	border: 1px solid #45c5d8;
 	position: fixed;
 	animation: click ease-in-out forwards 0.3s;
+	background-color: #444;
 }

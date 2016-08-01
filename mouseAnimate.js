@@ -4,7 +4,8 @@ var animateMouse = function(event, args){
 		defaultArgs = {
 			time : "0.3s",
 			setToElement: document,
-			color: '#000'
+			color: '#000',
+			background: 'transparent'
 		},
   		pfx = ["webkit", "moz", "MS", "o", ""]; // Browser types support
 
@@ -77,6 +78,7 @@ var animateMouse = function(event, args){
     	elem.style.animationDuration = self.Args.time;
     	// Set circle color
     	elem.style.borderColor = self.Args.color;
+    	elem.style.backgroundColor = self.Args.background;
 		// Add a class to the element
 		elem.classList.add('animateClick');
 		// Append the new element to the body
