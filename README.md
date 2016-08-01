@@ -1,6 +1,8 @@
 # mouse-event-animation
 
 
+*A working example* [JSFIDDLE](https://jsfiddle.net/j1pqjLny/10/)
+
 to initiate the script just add the next script to your DOM
 
 ```
